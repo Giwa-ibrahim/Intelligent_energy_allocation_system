@@ -6,7 +6,7 @@ import seaborn as sns
 import os
 import datetime
 import tensorflow as tf
-from tensorflow.keras.models import load_model
+#from tensorflow.keras.models import load_model
 import joblib
 from sklearn.preprocessing import MinMaxScaler
 import plotly.graph_objects as go
@@ -123,7 +123,7 @@ def load_prediction_resources():
         
         # Load model and scalers
         logger.info("Loading LSTM model...")
-        model = load_model(model_path)
+        model = tf.keras.models.load_model(model_path)
         logger.info(f"Model loaded successfully. Summary: {model.summary()}")
         
         logger.info("Loading feature scaler...")
